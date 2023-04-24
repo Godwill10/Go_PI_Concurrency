@@ -24,7 +24,7 @@ To install and run the program, follow these steps:
 
 4. Run the following command to compile and run the program:
 
-    go run main.go
+    go run pi.go
 
 5. The program will run and output an estimated value of pi.
 
