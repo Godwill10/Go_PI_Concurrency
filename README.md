@@ -1,4 +1,4 @@
-**Prolog Project FamilyBasics**
+**Concurrency in Go**
 
 **Name: Godwill Afolabi**
 
