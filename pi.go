@@ -7,7 +7,10 @@ import (
 )
 
 func main() {
-    n := 1000000 // number of iterations
+	// Define the number of iterations for each experiment
+	iterations := []int{10000, 100000, 1000000, 10000000, 100000000, 1000000000, 10000000000}
+
+
     count := 0   // count of points inside the circle
     for i := 0; i < n; i++ {
         x := rand.Float64()*2 - 1 // generate a random x-coordinate between -1 and 1
