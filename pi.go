@@ -24,5 +24,8 @@ func main() {
             }
         }
         pi := 4.0 * float64(count) / float64(n)
+
+		// Calculate the delta between the estimated pi and the actual pi
+		delta := pi - 3.14159265358979323846
     }
 }
