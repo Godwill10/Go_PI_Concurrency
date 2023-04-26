@@ -9,7 +9,19 @@ This is a simple Go program that estimates the value of pi using the stochastic 
 
 **Organization**
 
+The program is structured as follows:
 
+    1. Define an array of iteration values.
+
+    2. Spawn a goroutine for each iteration value in the array.
+
+    3. Perform the Monte Carlo method with the given number of iterations to estimate pi.
+
+    4. Calculate the difference between the estimated pi and the actual pi.
+
+    5. Report the results.
+
+    The program uses the sync.WaitGroup type to synchronize the goroutines, and the defer statement to decrement the wait group counter when a goroutine completes its execution. The rand.Float64() function is used to generate random numbers for the Monte Carlo simulation.
 
 
 **How to run/use**
