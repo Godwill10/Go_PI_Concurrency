@@ -43,4 +43,5 @@ func main() {
 			fmt.Printf("Time taken: %s\n", time.Since(start))
 		}(n)
 	}
+	wg.Wait()
 }
