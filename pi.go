@@ -11,6 +11,9 @@ func main() {
 	// Define the number of iterations for each experiment
 	iterations := []int{10000, 100000, 1000000, 10000000, 100000000, 1000000000, 10000000000}
 
+	// Use a wait group to synchronize the goroutines
+	var wg sync.WaitGroup
+	
 	// Loop through each iteration value and perform the experiment
     for i := 0; i < len(iterations); i++ {
         start := time.Now()
