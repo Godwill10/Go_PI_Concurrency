@@ -13,29 +13,34 @@ func main() {
 
 	// Use a wait group to synchronize the goroutines
 	var wg sync.WaitGroup
-	
-	// Loop through each iteration value and perform the experiment
-    for i := 0; i < len(iterations); i++ {
-        start := time.Now()
 
-        // Perform the Monte Carlo method to estimate pi
-        count := 0
-        for i := 0; i < n; i++ {
-            x := rand.Float64()*2 - 1
-            y := rand.Float64()*2 - 1
-            if x*x+y*y < 1 {
-                count++
-            }
-        }
-        pi := 4.0 * float64(count) / float64(n)
+	// Loop through each iteration value and spawn a goroutine to perform the experiment
+	for _, n := range iterations {
+		wg.Add(1)
+		go func(n int) {
+			defer wg.Done()
 
-		// Calculate the delta between the estimated pi and the actual pi
-		delta := pi - 3.14159265358979323846
+			start := time.Now()
 
-		// Report the results
-		fmt.Printf("Number of iterations: ", n)
-		fmt.Printf("Estimated pi: ", pi)
-		fmt.Printf("Delta from true pi: ", delta)
-		fmt.Printf("Time taken: ", time.Since(start))
-    }
+			// Perform the Monte Carlo method to estimate pi
+			count := 0
+			for i := 0; i < n; i++ {
+				x := rand.Float64()*2 - 1
+				y := rand.Float64()*2 - 1
+				if x*x+y*y < 1 {
+					count++
+				}
+			}
+			pi := 4.0 * float64(count) / float64(n)
+
+			// Calculate the delta between the estimated pi and the actual pi
+			delta := pi - 3.14159265358979323846
+
+			// Report the results
+			fmt.Printf("Number of iterations: %d\n", n)
+			fmt.Printf("Estimated pi: %f\n", pi)
+			fmt.Printf("Delta from true pi: %f\n", delta)
+			fmt.Printf("Time taken: %s\n", time.Since(start))
+		}(n)
+	}
 }
