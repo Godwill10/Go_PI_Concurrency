@@ -22,7 +22,7 @@ func main() {
 
 			start := time.Now()
 
-			// Perform the Monte Carlo method to estimate pi
+			// Perform the stochastic method to estimate pi
 			count := 0
 			for i := 0; i < n; i++ {
 				x := rand.Float64()*2 - 1
