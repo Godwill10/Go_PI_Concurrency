@@ -4,12 +4,12 @@
 
 **Purpose**
 
-This is a simple Go program that uses stochastic method to approximate the value of pi.
+This is a simple Go program that estimates the value of pi using the stochastic method method. The program defines an array of iteration values, and then spawns a goroutine for each value in the array. Each goroutine performs the stochastic method with the given number of iterations to estimate pi, calculates the difference between the estimated pi and the actual pi, and reports the results.
 
 
 **Organization**
 
-The program will then loop through a set of iteration values and use the stochastic method to estimate pi for each iteration. The estimated value of pi, the delta from the true value of pi, and the time taken to perform the calculation will be printed to the console for each iteration.
+
 
 
 **How to run/use**
