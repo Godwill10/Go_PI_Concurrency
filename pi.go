@@ -37,10 +37,10 @@ func main() {
 			delta := pi - 3.14159265358979323846
 
 			// Report the results
-			fmt.Printf("Number of iterations: %d\n", n)
-			fmt.Printf("Estimated pi: %f\n", pi)
-			fmt.Printf("Delta from true pi: %f\n", delta)
-			fmt.Printf("Time taken: %s\n", time.Since(start))
+			fmt.Printf("Number of iterations: ", n)
+			fmt.Printf("Estimated pi: ", pi)
+			fmt.Printf("Delta from true pi: ", delta)
+			fmt.Printf("Time taken: ", time.Since(start))
 		}(n)
 	}
 	wg.Wait()
